@@ -1,10 +1,13 @@
+/*Process to create a linked-list by using constructor and function
+    with pointer referencing*/
+
 #include<bits/stdc++.h>
 #define ll long long int
 #define endl "\n"
-#define null NULL
+#define null NULL           //using null instead of NULL everywhere for convinience.
 using namespace std;
 
-class node{
+class node{                 //structure of nodes in linked-list
     public:
         int data;
         node* next;
@@ -16,7 +19,7 @@ class node{
 
 
 
-void display(node* temp){
+void display(node* temp){               //function to display the list.
     while(temp!=null){
         cout << temp->data << "->";
         temp = temp->next;
@@ -49,10 +52,10 @@ void InsertAtBack(node *&head,int val){
 
 int main(int argc, char const *argv[])
 {
-    node *head =null;
+    node *head =null;           //intial linked-list is empty.
     InsertAtFront(head,5);
     InsertAtFront(head,9);
     InsertAtBack(head,55);
-    display(head);
+    display(head);              //calling display function.
     return 0;
 }
