@@ -50,12 +50,46 @@ void InsertAtBack(node *&head,int val){
     temp->next=n;
 }
 
+void InsertAfterNthNode(int n,node*head,int val){
+    node* num = new node(val);
+    if(head==null){
+        cout << "list is Empty..." << endl;
+        return;
+    }
+    int count =1;
+    while(count !=n){
+        head = head->next;
+        count++;
+    }
+    num->next=head->next;
+    head->next=num;
+}
+
+void InsertBeforeNthNode(int n,node* head,int val){
+    node* num = new node(val);
+    if(head==null){
+    cout << "list is empty..."<< endl;
+    return;
+    }
+    int count = 1;
+    while(count!=n-1){
+        head = head->next;
+        count++;
+    }
+
+    num->next=head->next;
+    head ->next=num;
+
+}
+
 int main(int argc, char const *argv[])
 {
     node *head =null;           //intial linked-list is empty.
     InsertAtFront(head,5);
     InsertAtFront(head,9);
     InsertAtBack(head,55);
+    InsertAfterNthNode(2,head,1000);
+    InsertBeforeNthNode(3,head,15);
     display(head);              //calling display function.
     return 0;
 }
